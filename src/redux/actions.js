@@ -1,20 +1,12 @@
 //Action Types
-export const ADD_TODO = 'ADD_TODO';
-export const REMOVE_TODO = 'REMOVE_TODO';
+export const CREATE_COURSE = 'CREATE_COURSE';
 
 //Action Creators
-export {addTodo, removeTodo};
+export {createCourse};
 
-function addTodo(value) {
+function createCourse(course) {
   return {
-    type: ADD_TODO,
-    value
+    type: CREATE_COURSE, course
   };
 }
 
-function removeTodo(id) {
-  return {
-    type: REMOVE_TODO,
-    id
-  };
-}

@@ -1,19 +1,20 @@
 import {combineReducers} from 'redux';
-import {ADD_TODO, REMOVE_TODO} from './actions';
+import {CREATE_COURSE} from './actions';
 
-function todoReducer(state = [], action) {
-  switch(action.type) {
-    case ADD_TODO:
-      return [...state, action.value];
-    case REMOVE_TODO:
-      return state;
-  }
-
-  return state;
+function courseReducer(state = [], action) {
+    switch (action.type) {
+        case CREATE_COURSE:
+            return [
+                ...state,
+                Object.assign({}, action.course)
+            ];
+        default:
+            return state;
+    }
 }
 
 const combinedReduces = combineReducers({
-  todos: todoReducer
+    courses: courseReducer
 });
 
 export default combinedReduces;
