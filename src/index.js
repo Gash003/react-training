@@ -7,10 +7,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 import routes from './routes';
 import configureStore from './redux/configureStore';
-import {loadCourses} from './redux/actions';
+import {loadCourses, loadAuthors} from './redux/actions';
 
 const store = configureStore();
 store.dispatch(loadCourses());
+store.dispatch(loadAuthors());
 
 
 ReactDOM.render(
